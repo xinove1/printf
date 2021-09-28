@@ -4,9 +4,30 @@
 
 void test()
 {
-	printf("Expected: \n");
+	printf("Expected: ");
+	printf("|guys %c %c|\n", 'f', 'u');
+	ft_printf("Outcome:  ");
+	ft_printf("|guys %c %c|\n", 'f', 'u');
 	printf("\n");
-	ft_printf("Outcome: \n");
+
+	printf("Expected: ");
+	printf("|guys %% %c|\n", 'f');
+	ft_printf("Outcome:  ");
+	ft_printf("|guys %% %c|\n", 'f');
+	printf("\n");
+
+	printf("Expected: ");
+	printf("|guys %s|\n", "maaaanow < / 3");
+	ft_printf("Outcome:  ");
+	ft_printf("|guys %s|\n", "maaaanow < / 3");
+	printf("\n");
+
+	printf("Expected: ");
+	printf("|guys %p|\n", "maaaanow < / 3");
+	ft_printf("Outcome:  ");
+	ft_printf("|guys %s|\n", "maaaanow < / 3");
+	printf("\n");
+
 }
 
 int main(void)
