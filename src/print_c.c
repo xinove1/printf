@@ -11,15 +11,9 @@ int	print_c(va_list args)
 
 int	print_string(va_list args)
 {
-	int		count;
 	char	*str;
 
 	str = va_arg(args, char *);
-	while (*str)
-	{
-		write(1, str, 1);
-		count++;
-		str++;
-	}
-	return (count);
+	write(1, str, ft_strlen(str));
+	return (ft_strlen(str));
 }

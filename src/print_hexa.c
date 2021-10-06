@@ -1,5 +1,6 @@
 #include "ft_printf.h"
 
-i = 123
+int	print_hex(int n, va_list args, int lower)
+{
 
-(20 - (F - 3))
+}
