@@ -34,7 +34,6 @@ int	read_conversion(const char *str, int i, va_list args)
 	int	count;
 
 	count = 0;
-	//printf("inside str[i]: %c   ", str[i]);
 	if (str[i] == 'c')
 		count = print_c(args);
 	else if (str[i] == 's')

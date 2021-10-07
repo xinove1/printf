@@ -3,7 +3,7 @@
 int	print_hex(va_list args, int lower)
 {
 	int		count;
-	int		n;
+	long	n;
 	char	*str;
 
 	count = 0;

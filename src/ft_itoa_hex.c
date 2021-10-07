@@ -1,5 +1,5 @@
 #include "ft_printf.h"
-static size_t	count_hex(int n);
+static size_t	count_hex(long n);
 static void		populate_result(long n, int i, char *str, int lower);
 //NOTE refactor
 char	*ft_itoa_hex(long n, int lower)
@@ -8,6 +8,7 @@ char	*ft_itoa_hex(long n, int lower)
 	char	*result;
 	long	ln;
 
+	printf("test: %lX", n);
 	ln = n;
 	n = 0;
 	if (ln < 0)
@@ -41,7 +42,7 @@ static void	populate_result(long n, int i, char *str, int lower)
 	}
 }
 
-static size_t	count_hex(int n)
+static size_t	count_hex(long n)
 {
 	size_t	i;
 
