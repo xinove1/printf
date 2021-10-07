@@ -41,11 +41,11 @@ int	read_conversion(const char *str, int i, va_list args)
 	else if (str[i] == 'p')
 		count = print_hex(args, 2);
 	else if (str[i] == 'd')
-		count = 0;
+		count = print_numbers(args, 0);
 	else if (str[i] == 'i')
-		count = 0;
+		count = print_numbers(args, 0);
 	else if (str[i] == 'u')
-		count = 0;
+		count = print_numbers(args, 1);
 	else if (str[i] == 'x')
 		count = print_hex(args, 1);
 	else if (str[i] == 'X')

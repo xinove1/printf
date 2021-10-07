@@ -27,3 +27,22 @@ int	print_hex(va_list args, int lower)
 	free(str);
 	return (count);
 }
+
+int	print_numbers(va_list args, int unsigned_number)
+{
+	int		count;
+	char	*str;
+
+	count = 0;
+	if (unsigned_number)
+		str = ft_itoa(va_arg(args, unsigned int));
+	else
+		str = ft_itoa(va_arg(args, int));
+	while (str[count])
+	{
+		write(1, &str[count], 1);
+		count++;
+	}
+	free(str);
+	return (count);
+}

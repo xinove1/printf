@@ -66,10 +66,29 @@ void test_hex()
 	printf("aaa\n");
 }
 
+void test_number()
+{
+	int a, b = 0;
+	printf("Expected: ");
+	a = printf("|guys %d|\n", 2903);
+	ft_printf("Outcome:  ");
+	b = ft_printf("|guys %d|\n", 2903);
+	printf("A: %d , B: %d \n", a, b);
+	printf("\n");
+
+	printf("Expected: ");
+	a = printf("|guys %i|\n", 2903);
+	ft_printf("Outcome:  ");
+	b = ft_printf("|guys %i|\n", 2903);
+	printf("A: %d , B: %d \n", a, b);
+	printf("\n");
+}
+
 int main(void)
 {
 	test_c();
 	test_str();
 	test_hex();
+	test_number();
 	return 0;
 }

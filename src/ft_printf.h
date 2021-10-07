@@ -12,5 +12,6 @@ char	*ft_itoa(int n);
 char	*ft_itoa_hex(long n, int lower);
 size_t	ft_strlen(const char *s);
 int		print_hex(va_list args, int lower);
+int		print_numbers(va_list args, int unsigned_number);
 
 #endif
