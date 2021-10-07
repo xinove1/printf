@@ -49,9 +49,19 @@ void test_hex()
 	printf("\n");
 
 	printf("Expected: ");
-	a =printf("|guys %s|\n", "maaaanow < / 3");
+	a = printf("|guys %X|\n", 2903);
 	ft_printf("Outcome:  ");
-	b =ft_printf("|guys %s|\n", "maaaanow < / 3");
+	b = ft_printf("|guys %X|\n", 2903);
+	printf("A: %d , B: %d \n", a, b);
+	printf("\n");
+
+
+
+	char *t = "mabr";
+	printf("Expected: ");
+	a = printf("|guys %p|\n", t);
+	ft_printf("Outcome:  ");
+	b = ft_printf("|guys %p|\n", t);
 	printf("A: %d , B: %d \n", a, b);
 	printf("\n");
 }
@@ -60,5 +70,6 @@ int main(void)
 {
 	test_c();
 	test_str();
+	test_hex();
 	return 0;
 }

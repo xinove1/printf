@@ -1,8 +1,8 @@
 #include "ft_printf.h"
 static size_t	count_hex(int n);
 static void		populate_result(long n, int i, char *str, int lower);
-
-char	*ft_itoa_hex(int n, int lower)
+//NOTE refactor
+char	*ft_itoa_hex(long n, int lower)
 {
 	int		i;
 	char	*result;
@@ -11,17 +11,12 @@ char	*ft_itoa_hex(int n, int lower)
 	ln = n;
 	n = 0;
 	if (ln < 0)
-	{
 		ln = -ln;
-		n = 1;
-	}
-	result = malloc(count_hex(ln) + n + 1);
+	result = malloc(count_hex(ln) + 1);
 	if (!result)
 		return (NULL);
-	i = count_hex(ln) + n - 1;
+	i = count_hex(ln) - 1;
 	result[i + 1] = '\0';
-	if (n)
-		result[0] = '-';
 	if (!ln)
 		result[i] = '0';
 	populate_result(ln, i, result, lower);

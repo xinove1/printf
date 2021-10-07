@@ -40,7 +40,7 @@ int	read_conversion(const char *str, int i, va_list args)
 	else if (str[i] == 's')
 		count = print_string(args);
 	else if (str[i] == 'p')
-		count = 0;
+		count = print_hex(args, 2);
 	else if (str[i] == 'd')
 		count = 0;
 	else if (str[i] == 'i')
@@ -48,9 +48,9 @@ int	read_conversion(const char *str, int i, va_list args)
 	else if (str[i] == 'u')
 		count = 0;
 	else if (str[i] == 'x')
-		count = 0;
+		count = print_hex(args, 1);
 	else if (str[i] == 'X')
-		count = 0;
+		count = print_hex(args, 0);
 	else if (str[i] == '%')
 	{
 		write(1, "%", 1);
