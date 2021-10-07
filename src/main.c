@@ -63,7 +63,7 @@ void test_hex()
 	ft_printf("Outcome:  ");
 	b = ft_printf("|guys %p|\n", t);
 	printf("A: %d , B: %d \n", a, b);
-	printf("\n");
+	printf("aaa\n");
 }
 
 int main(void)
