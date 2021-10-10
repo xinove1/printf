@@ -2,12 +2,17 @@
 
 int	print_hex(va_list args, int lower)
 {
-	int		count;
-	long	n;
-	char	*str;
+	int				count;
+	unsigned long	n;
+	char			*str;
 
 	count = 0;
-	n = va_arg(args, long);
+	n = va_arg(args, unsigned long);
+	if ((long) n < 0)
+	{
+		write(1, "0xffffffffffffffff",18);
+		return (18);
+	}
 	if (lower == 2)
 	{
 		count = 2;
@@ -17,15 +22,10 @@ int	print_hex(va_list args, int lower)
 		str = ft_itoa_hex(n, 1);
 	else
 		str = ft_itoa_hex(n, 0);
-	n = 0;
-	while (str[n])
-	{
-		write(1, &str[n], 1);
-		n++;
-		count++;
-	}
+	n = ft_strlen(str);
+	write(1, str, n);
 	free(str);
-	return (count);
+	return (count + n);
 }
 
 int	print_numbers(va_list args, int unsigned_number)
@@ -35,7 +35,7 @@ int	print_numbers(va_list args, int unsigned_number)
 
 	count = 0;
 	if (unsigned_number)
-		str = ft_itoa(va_arg(args, unsigned int));
+		str = ft_itoa_unsigned(va_arg(args, unsigned int));
 	else
 		str = ft_itoa(va_arg(args, int));
 	while (str[count])

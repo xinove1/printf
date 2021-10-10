@@ -2,17 +2,13 @@
 static size_t	count_hex(long n);
 static void		populate_result(long n, int i, char *str, int lower);
 //NOTE refactor
-char	*ft_itoa_hex(long n, int lower)
+char	*ft_itoa_hex(unsigned long n, int lower)
 {
-	int		i;
-	char	*result;
-	long	ln;
+	int				i;
+	char			*result;
+	unsigned long	ln;
 
-	printf("test: %lX", n);
 	ln = n;
-	n = 0;
-	if (ln < 0)
-		ln = -ln;
 	result = malloc(count_hex(ln) + 1);
 	if (!result)
 		return (NULL);
@@ -28,7 +24,7 @@ static void	populate_result(long n, int i, char *str, int lower)
 {
 	while (n && str)
 	{
-		if (n % 16 > 10)
+		if (n % 16 > 9)
 		{
 			if (lower)
 				str[i] = (n % 16) + 87;

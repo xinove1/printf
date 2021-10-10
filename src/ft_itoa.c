@@ -1,5 +1,5 @@
 #include "ft_printf.h"
-static size_t	count_decimal(int n);
+static size_t	count_decimal(long n);
 static void		populate_result(long n, int i, char *str);
 
 char	*ft_itoa(int n)
@@ -28,6 +28,21 @@ char	*ft_itoa(int n)
 	return (result);
 }
 
+char	*ft_itoa_unsigned(unsigned int n)
+{
+	int		i;
+	char	*result;
+
+	result = malloc(count_decimal(n) + 1);
+	if (!result)
+		return (NULL);
+	i = count_decimal(n) - 1;
+	result[i + 1] = '\0';
+	if (!n)
+		result[i] = '0';
+	populate_result(n, i, result);
+	return (result);
+}
 static void	populate_result(long n, int i, char *str)
 {
 	while (n && str)
@@ -38,7 +53,7 @@ static void	populate_result(long n, int i, char *str)
 	}
 }
 
-static size_t	count_decimal(int n)
+static size_t	count_decimal(long n)
 {
 	size_t	i;
 

@@ -1,4 +1,4 @@
-NAME=libftlprintf.a
+NAME=libftprintf.a
 
 CC=gcc
 
@@ -6,32 +6,23 @@ CFLAGS=-Wall -Wextra -Werror
 
 RM=rm -f
 
-SRC= ft_printf.c print_c.c print_hexa.c
-
-BONUS =
+SRC=ft_itoa.c ft_itoa_hex.c ft_printf.c ft_strlen.c print_c.c print_numbers.c
 
 OBJ=$(SRC:.c=.o)
 
-$(NAME):
+$(NAME): $(SRC) ft_printf.h
 	$(CC) $(CFLAGS) -c $(SRC)
-	ar rc $(NAME) $(OBJ)
+	ar -rcs $(NAME) $(OBJ)
 	ranlib $(NAME)
 
-libft:
-
-all: $(NAME) libft
+all: $(NAME)
 
 clean:
-	$(M)
-	$(RM) $(OBJ) $(BONUS_OBJ)
+	$(RM) $(OBJ)
 
 fclean: clean
-	$(RM) $(NAME) $(BONUS_OBJ)
+	$(RM) $(NAME)
 
 re: fclean all
 
 .PHONY: clean fclean
-
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
-	gcc -nostartfiles -shared -o libft.so $(OBJ)

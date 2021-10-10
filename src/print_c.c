@@ -14,6 +14,11 @@ int	print_string(va_list args)
 	char	*str;
 
 	str = va_arg(args, char *);
-	write(1, str, ft_strlen(str));
-	return (ft_strlen(str));
+	if (str)
+	{
+		write(1, str, ft_strlen(str));
+		return (ft_strlen(str));
+	}
+	write(1, "(null)", 6);
+	return (6);
 }
