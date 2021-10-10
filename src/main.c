@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "ft_printf.h"
+#include <limits.h>
 
 void test_c()
 {
@@ -84,11 +85,60 @@ void test_number()
 	printf("\n");
 }
 
+void test_m()
+{
+	int a, b = 0;
+	printf("Expected: ");
+	a = printf("|guys %p|\n", (void *) ULONG_MAX);
+	ft_printf("Outcome:  ");
+	b = ft_printf("|guys %p|\n", ULONG_MAX);
+	printf("A: %d , B: %d \n", a, b);
+	printf("\n");
+
+	printf("Expected: ");
+	a = printf("|guys %p|\n", (void *) LONG_MAX);
+	ft_printf("Outcome:  ");
+	b = ft_printf("|guys %p|\n", LONG_MAX);
+	printf("A: %d , B: %d \n", a, b);
+	printf("\n");
+
+
+	printf("Expected: ");
+	a = printf("|guys %p|\n", (void *) LONG_MIN);
+	ft_printf("Outcome:  ");
+	b = ft_printf("|guys %p|\n", LONG_MIN);
+	printf("A: %d , B: %d \n", a, b);
+	printf("\n");
+
+	printf("Expected: ");
+	a = printf("|guys %X|\n", (unsigned int) ULONG_MAX);
+	ft_printf("Outcome:  ");
+	b = ft_printf("|guys %X|\n", ULONG_MAX);
+	printf("A: %d , B: %d \n", a, b);
+	printf("\n");
+
+	printf("Expected: ");
+	a = printf("|guys %X|\n", (unsigned int) LONG_MAX);
+	ft_printf("Outcome:  ");
+	b = ft_printf("|guys %X|\n", LONG_MAX);
+	printf("A: %d , B: %d \n", a, b);
+	printf("\n");
+
+
+	printf("Expected: ");
+	a = printf("|guys %X|\n", (unsigned int) LONG_MIN);
+	ft_printf("Outcome:  ");
+	b = ft_printf("|guys %X|\n", LONG_MIN);
+	printf("A: %d , B: %d \n", a, b);
+	printf("\n");
+}
+
 int main(void)
 {
-	test_c();
-	test_str();
-	test_hex();
-	test_number();
+	/* test_c(); */
+	/* test_str(); */
+	/* test_hex(); */
+	/* test_number(); */
+	test_m();
 	return 0;
 }

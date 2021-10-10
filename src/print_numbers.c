@@ -7,17 +7,14 @@ int	print_hex(va_list args, int lower)
 	char			*str;
 
 	count = 0;
-	n = va_arg(args, unsigned long);
-	if ((long) n < 0)
-	{
-		write(1, "0xffffffffffffffff", 18);
-		return (18);
-	}
 	if (lower == 2)
 	{
+		n = va_arg(args, unsigned long);
 		count = 2;
 		write(1, "0x", 2);
 	}
+	else
+		n = va_arg(args, unsigned int);
 	if (lower)
 		str = ft_itoa_hex(n, 1);
 	else

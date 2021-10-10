@@ -1,6 +1,6 @@
 #include "ft_printf.h"
-static size_t	count_hex(long n);
-static void		populate_result(long n, int i, char *str, int lower);
+static size_t	count_hex(unsigned long n);
+static void		populate_result(unsigned long n, int i, char *str, int lower);
 
 char	*ft_itoa_hex(unsigned long n, int lower)
 {
@@ -18,7 +18,7 @@ char	*ft_itoa_hex(unsigned long n, int lower)
 	return (result);
 }
 
-static void	populate_result(long n, int i, char *str, int lower)
+static void	populate_result(unsigned long n, int i, char *str, int lower)
 {
 	while (n && str)
 	{
@@ -36,7 +36,7 @@ static void	populate_result(long n, int i, char *str, int lower)
 	}
 }
 
-static size_t	count_hex(long n)
+static size_t	count_hex(unsigned long n)
 {
 	size_t	i;
 
