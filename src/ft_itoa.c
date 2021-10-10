@@ -43,6 +43,7 @@ char	*ft_itoa_unsigned(unsigned int n)
 	populate_result(n, i, result);
 	return (result);
 }
+
 static void	populate_result(long n, int i, char *str)
 {
 	while (n && str)

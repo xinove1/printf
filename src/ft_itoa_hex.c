@@ -1,7 +1,7 @@
 #include "ft_printf.h"
 static size_t	count_hex(long n);
 static void		populate_result(long n, int i, char *str, int lower);
-//NOTE refactor
+
 char	*ft_itoa_hex(unsigned long n, int lower)
 {
 	int				i;

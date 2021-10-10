@@ -10,7 +10,7 @@ int	print_hex(va_list args, int lower)
 	n = va_arg(args, unsigned long);
 	if ((long) n < 0)
 	{
-		write(1, "0xffffffffffffffff",18);
+		write(1, "0xffffffffffffffff", 18);
 		return (18);
 	}
 	if (lower == 2)
