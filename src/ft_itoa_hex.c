@@ -6,17 +6,15 @@ char	*ft_itoa_hex(unsigned long n, int lower)
 {
 	int				i;
 	char			*result;
-	unsigned long	ln;
 
-	ln = n;
-	result = malloc(count_hex(ln) + 1);
+	result = malloc(count_hex(n) + 1);
 	if (!result)
 		return (NULL);
-	i = count_hex(ln) - 1;
+	i = count_hex(n) - 1;
 	result[i + 1] = '\0';
-	if (!ln)
+	if (!n)
 		result[i] = '0';
-	populate_result(ln, i, result, lower);
+	populate_result(n, i, result, lower);
 	return (result);
 }
 
