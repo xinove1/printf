@@ -15,8 +15,8 @@ int	ft_printf(const char *str, ...)
 	{
 		if (str[i] == '%')
 		{
-			count += read_conversion(str, i + 1, args);
 			i++;
+			count += read_conversion(str, i, args);
 		}
 		else
 		{
