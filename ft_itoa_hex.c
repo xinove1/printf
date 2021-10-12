@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa_hex.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nthomas- <nthomas-@student.42sp.org.br     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/12 16:32:02 by nthomas-          #+#    #+#             */
+/*   Updated: 2021/10/12 16:32:04 by nthomas-         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 static size_t	count_hex(unsigned long n);
 static void		populate_result(unsigned long n, int i, char *str, int lower);
