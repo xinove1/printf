@@ -6,7 +6,7 @@
 /*   By: nthomas- <nthomas-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 16:32:26 by nthomas-          #+#    #+#             */
-/*   Updated: 2021/10/12 16:32:27 by nthomas-         ###   ########.fr       */
+/*   Updated: 2021/10/12 16:48:37 by nthomas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 # include <unistd.h>
 # include <stdarg.h>
 # include <stdlib.h>
-# include <stdio.h> //NOTE Remove
 
 int		ft_printf(const char *string, ...);
 int		print_c(va_list args);

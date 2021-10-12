@@ -6,11 +6,12 @@
 /*   By: nthomas- <nthomas-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/12 16:32:29 by nthomas-          #+#    #+#             */
-/*   Updated: 2021/10/12 16:32:31 by nthomas-         ###   ########.fr       */
+/*   Updated: 2021/10/12 16:49:24 by nthomas-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
 size_t	ft_strlen(const char *s)
 {
 	int	i;
