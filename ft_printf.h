@@ -15,6 +15,11 @@
 # include <unistd.h>
 # include <stdarg.h>
 # include <stdlib.h>
+# if __APPLE__
+#  define IS_MACOS 1
+# else
+#  define IS_MACOS 0
+# endif
 
 int		ft_printf(const char *string, ...);
 int		print_c(va_list args);

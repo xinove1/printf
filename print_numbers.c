@@ -12,6 +12,8 @@
 
 #include "ft_printf.h"
 
+static int	deal_pointer(int lower, unsigned long n);
+
 int	print_hex(va_list args, int lower)
 {
 	int				count;
@@ -20,21 +22,36 @@ int	print_hex(va_list args, int lower)
 
 	count = 0;
 	if (lower == 2)
-	{
 		n = va_arg(args, unsigned long);
-		count = 2;
-		write(1, "0x", 2);
-	}
 	else
 		n = va_arg(args, unsigned int);
 	if (lower)
 		str = ft_itoa_hex(n, 1);
 	else
 		str = ft_itoa_hex(n, 0);
-	n = ft_strlen(str);
-	write(1, str, n);
+	count = deal_pointer(lower, n);
+	if (count != 5)
+	{
+		n = ft_strlen(str);
+		write(1, str, n);
+	}
 	free(str);
 	return (count + n);
+}
+
+static int	deal_pointer(int lower, unsigned long n)
+{
+	if (lower == 2 && n == 0 && !IS_MACOS)
+	{
+		write(1, "(nil)", 5);
+		return (5);
+	}
+	else if (lower == 2)
+	{
+		write(1, "0x", 2);
+		return (2);
+	}
+	return (0);
 }
 
 int	print_numbers(va_list args, int unsigned_number)
