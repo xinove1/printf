@@ -12,46 +12,43 @@
 
 #include "ft_printf.h"
 
-static int	deal_pointer(int lower, unsigned long n);
-
 int	print_hex(va_list args, int lower)
+{
+	int		i;
+	char	*str;
+
+	if (lower == 1)
+		str = ft_itoa_hex(va_arg(args, unsigned int), 1);
+	else
+		str = ft_itoa_hex(va_arg(args, unsigned int), 0);
+	i = ft_strlen(str);
+	write(1, str, i);
+	free(str);
+	return (i);
+}
+
+int	print_p(va_list args)
 {
 	int				count;
 	unsigned long	n;
 	char			*str;
 
-	count = 0;
-	if (lower == 2)
-		n = va_arg(args, unsigned long);
-	else
-		n = va_arg(args, unsigned int);
-	if (lower)
-		str = ft_itoa_hex(n, 1);
-	else
-		str = ft_itoa_hex(n, 0);
-	count = deal_pointer(lower, n);
-	if (count != 5)
-	{
-		n = ft_strlen(str);
-		write(1, str, n);
-	}
-	free(str);
-	return (count + n);
-}
-
-static int	deal_pointer(int lower, unsigned long n)
-{
-	if (lower == 2 && n == 0 && !IS_MACOS)
+	n = va_arg(args, unsigned long);
+	str = ft_itoa_hex(n, 1);
+	if (!IS_MACOS && n == 0)
 	{
 		write(1, "(nil)", 5);
-		return (5);
+		count = 5;
 	}
-	else if (lower == 2)
+	else
 	{
 		write(1, "0x", 2);
-		return (2);
+		count = ft_strlen(str);
+		write(1, str, count);
+		count += 2;
 	}
-	return (0);
+	free(str);
+	return (count);
 }
 
 int	print_numbers(va_list args, int unsigned_number)

@@ -89,9 +89,9 @@ void test_m()
 {
 	int a, b = 0;
 	printf("Expected: ");
-	a = printf("|guys %p|\n", (void *) 0);
+	a = printf("%p\n", (void *) 0);
 	ft_printf("Outcome:  ");
-	b = ft_printf("|guys %p|\n", 0);
+	b = ft_printf("%p\n", 0);
 	printf("A: %d , B: %d \n", a, b);
 	printf("\n");
 

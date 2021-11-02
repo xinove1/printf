@@ -30,5 +30,6 @@ char	*ft_itoa_unsigned(unsigned int n);
 size_t	ft_strlen(const char *s);
 int		print_hex(va_list args, int lower);
 int		print_numbers(va_list args, int unsigned_number);
+int		print_p(va_list args);
 
 #endif
